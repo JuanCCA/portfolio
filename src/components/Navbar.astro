@@ -1,12 +1,40 @@
 ---
 import NavItem from "./NavItem.astro";
+
+const sections = [
+  { text: "Home", id: "home" },
+  { text: "Sobre mi", id: "about" },
+  { text: "Projects", id: "projects" },
+  { text: "Contact", id: "contact" },
+];
 ---
 
 <div
-  class="w-11/12 bg-gray-800 text-white flex items-center justify-around gap h-12 m-1.5 rounded-full shadow-lg"
+  class="w-11/12 bg-earth_yellow text-white flex items-center justify-around gap-1 h-12 m-1.5 rounded-full shadow-lg"
 >
-  <NavItem text={"Home"} href={"/"} />
-  <NavItem text={"About"} href={"/about"} />
-  <NavItem text={"Contact"} href={"/contact"} />
-  <NavItem text={"Projects"} href={"/projects"} />
+  {sections.map((s) => <NavItem text={s.text} href={`#${s.id}`} id={s.id} />)}
 </div>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        const link = document.querySelector(`.nav-link[href="#${id}"]`);
+
+        if (entry.isIntersecting) {
+          navLinks.forEach((l) =>
+            l.classList.remove("text-blue-400", "font-bold")
+          );
+          link?.classList.add("text-blue-400", "font-bold");
+        }
+      });
+    },
+    { threshold: 0.6 } // se activa cuando el 60% de la sección está visible
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>

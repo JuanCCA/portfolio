@@ -1,10 +1,29 @@
 ---
 import Navbar from "./Navbar.astro";
+const { currentSection } = Astro.props;
 ---
 
 <div class="flex justify-center sticky top-0 z-50">
-  <Navbar />
+  <Navbar currentSection={currentSection} />
 </div>
-<div class="flex items-center justify-center h-screen">
-  <h1 class="text-4xl font-bold">🚀 ¡Hola mundo con Astro + TailwindCSS!</h1>
-</div>
+<section id="home" class="h-screen flex items-center justify-center">
+  <h1 class="text-4xl">Bienvenido</h1>
+</section>
+
+<section
+  id="about"
+  class="h-screen flex items-center justify-center bg-gray-100 text-black"
+>
+  <h2 class="text-3xl">Sobre mí</h2>
+</section>
+
+<section id="projects" class="h-screen flex items-center justify-center">
+  <h2 class="text-3xl">Proyectos</h2>
+</section>
+
+<section
+  id="contact"
+  class="h-screen flex items-center justify-center bg-gray-100 text-black"
+>
+  <h2 class="text-3xl">Contacto</h2>
+</section>
