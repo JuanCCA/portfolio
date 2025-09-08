@@ -1,0 +1,205 @@
+---
+// Componente para mostrar la paleta de colores personalizada
+import { Theme } from "../../theme";
+
+const currentTheme = Theme.yellow;
+---
+
+<div class="p-8 bg-secondary">
+  <h2 class="text-3xl font-bold text-secondary-900 mb-6">
+    Tu Paleta de Colores Personalizada
+  </h2>
+
+  <div
+    class={`p-4 rounded ${currentTheme.bg} ${currentTheme.text} ${currentTheme.border}`}
+  >
+    Caja con tema dinámico
+  </div>
+
+  <!-- Primary Colors -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold text-secondary-800 mb-3">
+      Primary (Verde Musgo)
+    </h3>
+    <div class="flex flex-wrap gap-2">
+      <div class="bg-primary-50 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">primary-50</div>
+      </div>
+      <div class="bg-primary-100 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">primary-100</div>
+      </div>
+      <div class="bg-primary-200 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">primary-200</div>
+      </div>
+      <div class="bg-primary p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">primary</div>
+      </div>
+      <div class="bg-primary-700 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">primary-700</div>
+      </div>
+      <div class="bg-primary-900 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">primary-900</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary Colors -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold text-secondary-800 mb-3">
+      Secondary (Verde Pakistán)
+    </h3>
+    <div class="flex flex-wrap gap-2">
+      <div class="bg-secondary-50 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">secondary-50</div>
+      </div>
+      <div class="bg-secondary-100 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">secondary-100</div>
+      </div>
+      <div class="bg-secondary-200 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">secondary-200</div>
+      </div>
+      <div class="bg-secondary p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">secondary</div>
+      </div>
+      <div class="bg-secondary-700 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">secondary-700</div>
+      </div>
+      <div class="bg-secondary-900 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">secondary-900</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accent Colors -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold text-secondary-800 mb-3">
+      Accent (Amarillo Tierra)
+    </h3>
+    <div class="flex flex-wrap gap-2">
+      <div class="bg-accent-50 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">accent-50</div>
+      </div>
+      <div class="bg-accent-100 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">accent-100</div>
+      </div>
+      <div class="bg-accent-200 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">accent-200</div>
+      </div>
+      <div class="bg-accent p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">accent</div>
+      </div>
+      <div class="bg-accent-700 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">accent-700</div>
+      </div>
+      <div class="bg-accent-900 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">accent-900</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tertiary Colors -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold text-secondary-800 mb-3">
+      Tertiary (Aguamarina)
+    </h3>
+    <div class="flex flex-wrap gap-2">
+      <div class="bg-tertiary-50 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">tertiary-50</div>
+      </div>
+      <div class="bg-tertiary-100 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">tertiary-100</div>
+      </div>
+      <div class="bg-tertiary-200 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">tertiary-200</div>
+      </div>
+      <div class="bg-tertiary p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">tertiary</div>
+      </div>
+      <div class="bg-tertiary-700 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">tertiary-700</div>
+      </div>
+      <div class="bg-tertiary-900 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">tertiary-900</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Warning Colors -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold text-secondary-800 mb-3">
+      Warning (Púrpura)
+    </h3>
+    <div class="flex flex-wrap gap-2">
+      <div class="bg-warning-50 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">warning-50</div>
+      </div>
+      <div class="bg-warning-100 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">warning-100</div>
+      </div>
+      <div class="bg-warning-200 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-secondary-900">warning-200</div>
+      </div>
+      <div class="bg-warning p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">warning</div>
+      </div>
+      <div class="bg-warning-700 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">warning-700</div>
+      </div>
+      <div class="bg-warning-900 p-3 rounded text-center min-w-[100px]">
+        <div class="text-xs font-mono text-white">warning-900</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejemplos de uso -->
+  <div class="mt-8">
+    <h3 class="text-xl font-semibold text-secondary-800 mb-4">
+      Ejemplos de Botones
+    </h3>
+    <div class="flex flex-wrap gap-4">
+      <button
+        class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors"
+      >
+        Botón Primary
+      </button>
+      <button
+        class="bg-accent text-secondary-900 px-6 py-3 rounded-lg hover:bg-accent-600 hover:text-white transition-colors"
+      >
+        Botón Accent
+      </button>
+      <button
+        class="bg-tertiary text-secondary-900 px-6 py-3 rounded-lg hover:bg-tertiary-600 hover:text-white transition-colors"
+      >
+        Botón Tertiary
+      </button>
+      <button
+        class="border-2 border-secondary text-secondary px-6 py-3 rounded-lg hover:bg-secondary hover:text-white transition-colors"
+      >
+        Botón Outline
+      </button>
+    </div>
+  </div>
+
+  <!-- Ejemplo de tarjeta -->
+  <div class="mt-8">
+    <h3 class="text-xl font-semibold text-secondary-800 mb-4">
+      Ejemplo de Tarjeta
+    </h3>
+    <div
+      class="bg-primary-50 border-l-4 border-accent p-6 rounded-r-lg shadow-md max-w-md"
+    >
+      <h4 class="text-primary-900 font-bold text-lg mb-2">
+        Título de la Tarjeta
+      </h4>
+      <p class="text-secondary-700 mb-4">
+        Esta es una tarjeta de ejemplo usando tu paleta de colores
+        personalizada.
+      </p>
+      <button
+        class="bg-primary text-white px-4 py-2 rounded hover:bg-primary-700 transition-colors"
+      >
+        Ver más
+      </button>
+    </div>
+  </div>
+</div>
