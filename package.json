@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "start": "astro preview --port $PORT --host 0.0.0.0"
-  }
+  },
   "dependencies": {
     "@astrojs/mdx": "^4.3.4",
     "@tailwindcss/vite": "^4.1.3",
