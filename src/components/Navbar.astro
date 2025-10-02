@@ -1,5 +1,6 @@
 ---
 import NavItem from "./NavItem.astro";
+import { Theme } from "../../theme";
 
 const sections = [
   { text: "Home", id: "home" },
@@ -10,7 +11,7 @@ const sections = [
 ---
 
 <div
-  class="w-11/12 bg-earth_yellow text-white flex items-center justify-around gap-1 h-12 m-1.5 rounded-full shadow-lg"
+  class={`w-11/12 ${Theme.secondary.bg} ${Theme.secondary.text} ${Theme.secondary.border} border-2 flex items-center justify-around gap-1 h-12 m-1.5 rounded-full shadow-lg backdrop-blur-sm bg-opacity-95`}
 >
   {sections.map((s) => <NavItem text={s.text} href={`#${s.id}`} id={s.id} />)}
 </div>
@@ -26,10 +27,20 @@ const sections = [
         const link = document.querySelector(`.nav-link[href="#${id}"]`);
 
         if (entry.isIntersecting) {
-          navLinks.forEach((l) =>
-            l.classList.remove("text-blue-400", "font-bold")
+          navLinks.forEach((l) => {
+            l.classList.remove(
+              "bg-rose-600",
+              "text-rose-50",
+              "font-bold",
+              "shadow-lg"
+            );
+          });
+          link?.classList.add(
+            "bg-rose-600",
+            "text-rose-50",
+            "font-bold",
+            "shadow-lg"
           );
-          link?.classList.add("text-blue-400", "font-bold");
         }
       });
     },

@@ -1,11 +1,13 @@
 ---
+import { Theme } from "../../theme";
 const { href, text } = Astro.props;
 ---
 
 <a
   href={href}
-  class="nav-link px-4 py-1 flex justify-center cursor-pointer rounded-full shadow-lg
-         hover:shadow-lg/60 hover:bg-gray-600/30 transition-all duration-300"
+  class={`nav-link px-4 py-1 flex justify-center cursor-pointer rounded-full
+         hover:${Theme.primary.bg} hover:${Theme.primary.text} hover:shadow-lg
+         transition-all duration-300 font-medium`}
 >
   {text}
 </a>

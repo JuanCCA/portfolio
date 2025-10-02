@@ -1,29 +1,48 @@
 ---
 import Navbar from "./Navbar.astro";
+import { Theme } from "../../theme";
 const { currentSection } = Astro.props;
 ---
 
 <div class="flex justify-center sticky top-0 z-50">
   <Navbar currentSection={currentSection} />
 </div>
-<section id="home" class="h-screen flex items-center justify-center">
-  <h1 class="text-4xl">Bienvenido</h1>
+<section
+  id="home"
+  class={`h-screen flex items-center justify-center ${Theme.primary.bg} ${Theme.primary.text}`}
+>
+  <div class="text-center">
+    <h1 class="text-5xl font-bold mb-4">Bienvenido</h1>
+    <p class="text-xl opacity-90">Descubre mi trabajo y experiencia</p>
+  </div>
 </section>
 
 <section
   id="about"
-  class="h-screen flex items-center justify-center bg-gray-100 text-black"
+  class={`h-screen flex items-center justify-center ${Theme.secondary.bg} ${Theme.secondary.text}`}
 >
-  <h2 class="text-3xl">Sobre mí</h2>
+  <div class="text-center">
+    <h2 class="text-4xl font-bold mb-4">Sobre mí</h2>
+    <p class="text-lg opacity-90">Conoce más acerca de mi experiencia</p>
+  </div>
 </section>
 
-<section id="projects" class="h-screen flex items-center justify-center">
-  <h2 class="text-3xl">Proyectos</h2>
+<section
+  id="projects"
+  class={`h-screen flex items-center justify-center ${Theme.tertiary.bg} ${Theme.tertiary.text}`}
+>
+  <div class="text-center">
+    <h2 class="text-4xl font-bold mb-4">Proyectos</h2>
+    <p class="text-lg opacity-90">Explora mis trabajos más recientes</p>
+  </div>
 </section>
 
 <section
   id="contact"
-  class="h-screen flex items-center justify-center bg-gray-100 text-black"
+  class={`h-screen flex items-center justify-center ${Theme.accent.bg} ${Theme.accent.text}`}
 >
-  <h2 class="text-3xl">Contacto</h2>
+  <div class="text-center">
+    <h2 class="text-4xl font-bold mb-4">Contacto</h2>
+    <p class="text-lg opacity-90">Conectemos y trabajemos juntos</p>
+  </div>
 </section>
