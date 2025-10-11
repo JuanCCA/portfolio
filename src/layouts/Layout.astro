@@ -1,13 +1,31 @@
+---
+import { ClientRouter } from "astro:transitions";
+import BasicScripts from "../components/common/BasicScripts.astro";
+
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="Juan Carlos Cantos Agudo" content="portfolio" />
-    <title>JCCantos Hub</title>
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+    <ClientRouter />
   </head>
-  <body class="bg-gray-900 text-white">
+  <body>
     <slot />
+    <BasicScripts />
   </body>
 </html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

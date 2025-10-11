@@ -5,14 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "start": "astro preview --port $PORT --host 0.0.0.0"
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.4",
-    "@tailwindcss/vite": "^4.1.3",
-    "@types/canvas-confetti": "^1.9.0",
-    "astro": "^5.13.5",
-    "canvas-confetti": "^1.9.3",
-    "tailwindcss": "^4.1.3"
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.14",
+    "@fontsource-variable/inter": "^5.2.6",
+    "astro": "^5.14.3",
+    "tailwindcss": "^4.1.14"
   }
 }

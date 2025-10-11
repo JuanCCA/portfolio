@@ -1,1 +1,74 @@
 @import "tailwindcss";
+
+@theme {
+  /* Activar modo oscuro por clase */
+  --dark-mode: class;
+
+  /* Colores principales */
+  --color-primary: #F4C753;
+  --color-secondary: #0154cf;
+  --color-accent: #6d28d9;
+
+  /* Fondos */
+  --color-background-light: #f8f7f6;
+  --color-background-dark: #221d10;
+  --color-bg-page: #ffffff;
+
+  /* Texto */
+  --color-text-default: #101010;
+  --color-text-muted: color-mix(in srgb, #101010 66%, transparent);
+
+  /* Tipografías */
+  --font-family-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-family-serif: "Inter Variable", ui-serif, Georgia, serif;
+  --font-family-heading: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: Inter;
+
+  /* Bordes redondeados */
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Animaciones */
+  --animate-fade: fadeInUp 1s both;
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(2rem); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Modo oscuro automático (según preferencias del sistema) */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-text-default: #e5ecf6;
+    --color-text-muted: color-mix(in srgb, #e5ecf6 66%, transparent);
+    --color-bg-page: #030620;
+    --color-background-light: #221d10;
+  }
+}
+
+/* Modo oscuro manual (por clase .dark) */
+.dark {
+  --color-text-default: #e5ecf6;
+  --color-text-muted: color-mix(in srgb, #e5ecf6 66%, transparent);
+  --color-bg-page: #030620;
+  --color-background-light: #221d10;
+}
+
+/* Selección de texto */
+::selection {
+  background-color: lavender;
+}
+
+.dark ::selection {
+  background-color: #221d10;
+  color: snow;
+}

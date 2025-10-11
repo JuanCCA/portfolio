@@ -5,12 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-vite: {
-  preview: {
-      allowedHosts: ['hub.jccantos.com']
-    },
-  plugins: [
-    tailwindcss()
-  ]
-}
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
