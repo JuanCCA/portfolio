@@ -1,74 +1,188 @@
 @import "tailwindcss";
 
-@theme {
-  /* Activar modo oscuro por clase */
-  --dark-mode: class;
+/* Modo oscuro basado en clase `.dark` */
+@custom-variant dark (&:where(.dark, .dark *));
 
-  /* Colores principales */
-  --color-primary: #F4C753;
-  --color-secondary: #0154cf;
-  --color-accent: #6d28d9;
+@layer base {
+  :root {
+    /* Paleta principal */
+    --color-primary: #DDCA28;
+    --color-primary-light: #F2E76A;
+    --color-primary-dark: #B3A31E;
+
+    --color-secondary: #2E2E2E;
+    --color-secondary-light: #4A4A4A;
+    --color-secondary-dark: #1C1C1C;
+
+    --color-accent: #5C7CFA;
+    --color-accent-light: #A6B7FF;
+    --color-accent-dark: #3457E0;
+
+    --color-background: #F8F8F8;
+    --color-text: #1A1A1A;
+    --color-text-inverse: #FFFFFF;
+  }
+
+  .dark {
+    --color-primary: #F2E76A;
+    --color-primary-light: #FFFF99;
+    --color-primary-dark: #DDCA28;
+
+    --color-secondary: #4A4A4A;
+    --color-secondary-light: #6A6A6A;
+    --color-secondary-dark: #2E2E2E;
+
+    --color-accent: #A6B7FF;
+    --color-accent-light: #C7D3FF;
+    --color-accent-dark: #5C7CFA;
+
+    --color-background: #1A1A1A;
+    --color-text: #FFFFFF;
+    --color-text-inverse: #1A1A1A;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  body {
+    @apply bg-[var(--color-background)] text-[var(--color-text)];
+  }
+}
+
+@layer components {
 
   /* Fondos */
-  --color-background-light: #f8f7f6;
-  --color-background-dark: #221d10;
-  --color-bg-page: #ffffff;
-
-  /* Texto */
-  --color-text-default: #101010;
-  --color-text-muted: color-mix(in srgb, #101010 66%, transparent);
-
-  /* Tipografías */
-  --font-family-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-family-serif: "Inter Variable", ui-serif, Georgia, serif;
-  --font-family-heading: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-display: Inter;
-
-  /* Bordes redondeados */
-  --radius: 0.25rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
-  --radius-full: 9999px;
-
-  /* Animaciones */
-  --animate-fade: fadeInUp 1s both;
-}
-
-@keyframes fadeInUp {
-  0% { 
-    opacity: 0; 
-    transform: translateY(2rem); 
+  .bg-primary {
+    background-color: var(--color-primary);
   }
-  100% { 
-    opacity: 1; 
-    transform: translateY(0); 
+
+  .bg-primary-light {
+    background-color: var(--color-primary-light);
   }
-}
 
-/* Modo oscuro automático (según preferencias del sistema) */
-@media (prefers-color-scheme: dark) {
-  @theme {
-    --color-text-default: #e5ecf6;
-    --color-text-muted: color-mix(in srgb, #e5ecf6 66%, transparent);
-    --color-bg-page: #030620;
-    --color-background-light: #221d10;
+  .bg-primary-dark {
+    background-color: var(--color-primary-dark);
   }
-}
 
-/* Modo oscuro manual (por clase .dark) */
-.dark {
-  --color-text-default: #e5ecf6;
-  --color-text-muted: color-mix(in srgb, #e5ecf6 66%, transparent);
-  --color-bg-page: #030620;
-  --color-background-light: #221d10;
-}
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
 
-/* Selección de texto */
-::selection {
-  background-color: lavender;
-}
+  .bg-secondary-light {
+    background-color: var(--color-secondary-light);
+  }
 
-.dark ::selection {
-  background-color: #221d10;
-  color: snow;
+  .bg-secondary-dark {
+    background-color: var(--color-secondary-dark);
+  }
+
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+
+  .bg-accent-light {
+    background-color: var(--color-accent-light);
+  }
+
+  .bg-accent-dark {
+    background-color: var(--color-accent-dark);
+  }
+
+  .bg-background {
+    background-color: var(--color-background);
+  }
+
+  /* Textos */
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-primary-light {
+    color: var(--color-primary-light);
+  }
+
+  .text-primary-dark {
+    color: var(--color-primary-dark);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .text-secondary-light {
+    color: var(--color-secondary-light);
+  }
+
+  .text-secondary-dark {
+    color: var(--color-secondary-dark);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .text-accent-light {
+    color: var(--color-accent-light);
+  }
+
+  .text-accent-dark {
+    color: var(--color-accent-dark);
+  }
+
+  .text-text {
+    color: var(--color-text);
+  }
+
+  .text-text-inverse {
+    color: var(--color-text-inverse);
+  }
+
+  /* Bordes */
+  .border-primary {
+    border-color: var(--color-primary);
+  }
+
+  .border-primary-light {
+    border-color: var(--color-primary-light);
+  }
+
+  .border-primary-dark {
+    border-color: var(--color-primary-dark);
+  }
+
+  .border-secondary {
+    border-color: var(--color-secondary);
+  }
+
+  .border-accent {
+    border-color: var(--color-accent);
+  }
+
+  .border-accent-light {
+    border-color: var(--color-accent-light);
+  }
+
+  .border-accent-dark {
+    border-color: var(--color-accent-dark);
+  }
+
+  /* Hover states usando las variantes */
+  .hover\:bg-primary-dark:hover {
+    background-color: var(--color-primary-dark);
+  }
+
+  .hover\:bg-secondary-light:hover {
+    background-color: var(--color-secondary-light);
+  }
+
+  .hover\:bg-accent-dark:hover {
+    background-color: var(--color-accent-dark);
+  }
+
+  .hover\:text-text-inverse:hover {
+    color: var(--color-text-inverse);
+  }
 }

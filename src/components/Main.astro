@@ -1,0 +1,48 @@
+---
+import Header from "./Header.astro";
+const { currentSection } = Astro.props;
+---
+
+<Header currentSection={currentSection} />
+
+<section
+  id="home"
+  class={`h-screen flex items-center justify-center bg-background text-text`}
+>
+  <div class="text-center">
+    <h1 class="text-5xl font-bold mb-4">Bienvenido</h1>
+    <p class="text-xl opacity-90">Descubre mi trabajo y experiencia</p>
+  </div>
+</section>
+
+<section
+  id="about"
+  class={`h-screen flex items-center justify-center bg-background text-text`}
+>
+  <div class="text-center">
+    <h2 class="text-4xl font-bold mb-4 text-primary">Sobre mí</h2>
+    <p class="text-lg opacity-90 text-secondary">
+      Conoce más acerca de mi experiencia
+    </p>
+  </div>
+</section>
+
+<section
+  id="projects"
+  class={`h-screen flex items-center justify-center bg-background text-text`}
+>
+  <div class="text-center">
+    <h2 class="text-4xl font-bold mb-4 text-accent-light">Proyectos</h2>
+    <p class="text-lg opacity-90">Explora mis trabajos más recientes</p>
+  </div>
+</section>
+
+<section
+  id="contact"
+  class={`h-screen flex items-center justify-center bg-background text-text`}
+>
+  <div class="text-center">
+    <h2 class="text-4xl font-bold mb-4">Contacto</h2>
+    <p class="text-lg opacity-90">Conectemos y trabajemos juntos</p>
+  </div>
+</section>
