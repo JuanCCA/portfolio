@@ -1,6 +1,56 @@
 <nav class="flex gap-20">
-  <a href="#home" class="hover:text-text-inverse font-medium">Inicio</a>
-  <a href="#about" class="hover:text-text-inverse font-medium">Acerca</a>
-  <a href="#projects" class="hover:text-text-inverse font-medium">Proyectos</a>
-  <a href="#contact" class="hover:text-text-inverse font-medium">Contacto</a>
+  <a
+    href="#home"
+    class="nav-link px-3 py-1 rounded-full transition-all duration-300 hover:text-text-inverse font-medium"
+    >Inicio</a
+  >
+  <a
+    href="#about"
+    class="nav-link px-3 py-1 rounded-full transition-all duration-300 hover:text-text-inverse font-medium"
+    >Acerca</a
+  >
+  <a
+    href="#projects"
+    class="nav-link px-3 py-1 rounded-full transition-all duration-300 hover:text-text-inverse font-medium"
+    >Proyectos</a
+  >
+  <a
+    href="#contact"
+    class="nav-link px-3 py-1 rounded-full transition-all duration-300 hover:text-text-inverse font-medium"
+    >Contacto</a
+  >
 </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        console.log(entries);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => {
+              link.classList.remove("bg-primary", "text-black", "shadow-md");
+            });
+
+            const activeLink = document.querySelector(
+              `a[href="#${entry.target.id}"]`,
+            );
+            if (activeLink) {
+              activeLink.classList.add("bg-primary", "text-black", "shadow-md");
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0.1,
+      },
+    );
+
+    // Observar todas las secciones
+    sections.forEach((section) => observer.observe(section));
+  });
+</script>

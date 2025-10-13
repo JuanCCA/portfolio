@@ -1,18 +1,15 @@
 ---
 import Header from "./Header.astro";
+import Home from "./sections/Home.astro";
 const { currentSection } = Astro.props;
 ---
 
 <Header currentSection={currentSection} />
-
 <section
   id="home"
   class={`h-screen flex items-center justify-center bg-background text-text`}
 >
-  <div class="text-center">
-    <h1 class="text-5xl font-bold mb-4">Bienvenido</h1>
-    <p class="text-xl opacity-90">Descubre mi trabajo y experiencia</p>
-  </div>
+  <Home />
 </section>
 
 <section
